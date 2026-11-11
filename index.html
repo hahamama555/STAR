@@ -26,27 +26,33 @@ html, body {
 
 body {
   background: radial-gradient(circle at top, #294c91, #101b3b 58%, #080e20);
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   color: #fff;
-  padding: max(4px, env(safe-area-inset-top)) 8px max(4px, env(safe-area-inset-bottom));
+  padding: max(4px, env(safe-area-inset-top)) 8px
+    max(4px, env(safe-area-inset-bottom));
+  min-height: 100vh;
   min-height: 100svh;
 }
 
 main {
   width: 100%;
   max-width: 560px;
-  height: calc(100svh - max(4px, env(safe-area-inset-top)) - max(4px, env(safe-area-inset-bottom)));
+  height: calc(
+    100svh - max(4px, env(safe-area-inset-top))
+    - max(4px, env(safe-area-inset-bottom))
+  );
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(2px, .5svh, 5px);
+  gap: clamp(3px, .6svh, 6px);
   min-height: 0;
 }
 
 .title {
   text-align: center;
   font-weight: 900;
-  font-size: clamp(19px, 5.5vw, 29px);
+  font-size: clamp(21px, 6vw, 31px);
   line-height: 1.05;
   text-shadow: 0 2px 0 #7c3900, 0 0 10px #ffd65b;
   margin: 0;
@@ -57,7 +63,7 @@ main {
   text-align: center;
   color: #ffe58a;
   font-weight: 800;
-  font-size: clamp(10px, 3vw, 14px);
+  font-size: clamp(11px, 3.2vw, 15px);
   margin: 0;
   flex: 0 0 auto;
 }
@@ -67,15 +73,15 @@ main {
   border: 2px solid var(--gold);
   border-radius: 9px;
   text-align: center;
-  padding: 3px;
-  font-size: clamp(17px, 4.5vw, 23px);
+  padding: 4px;
+  font-size: clamp(19px, 5vw, 25px);
   font-weight: 900;
   line-height: 1.05;
   flex: 0 0 auto;
 }
 
 .progress small {
-  font-size: 9px;
+  font-size: 10px;
   color: #ffe58a;
 }
 
@@ -89,7 +95,7 @@ main {
 
 .stage {
   position: relative;
-  width: min(100%, 47svh);
+  width: min(100%, 48svh);
   max-width: 100%;
   max-height: 100%;
   aspect-ratio: 1 / 1;
@@ -97,7 +103,7 @@ main {
   border-radius: 9px;
   overflow: hidden;
   background: #17264b;
-  box-shadow: 0 0 12px #f8c84a66;
+  box-shadow: 0 0 14px #f8c84a66;
   flex: 0 1 auto;
 }
 
@@ -123,24 +129,39 @@ main {
   min-width: 0;
   min-height: 0;
   border: 1px solid #fff3a0;
-  border-radius: 2px;
-  background: linear-gradient(145deg, #ffe887, #e7a91c 55%, #a95c08);
-  box-shadow: inset 0 0 3px #fff8;
-  display: grid;
-  place-items: center;
-  color: #fff8b0;
-  font-size: clamp(6px, 1.75vw, 10px);
-  line-height: 1;
+  border-radius: 3px;
+  background: linear-gradient(
+    145deg,
+    #ffe887,
+    #e7a91c 55%,
+    #a95c08
+  );
+  box-shadow: inset 0 0 4px #fff8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: clamp(8px, 2.5vw, 12px);
+  line-height: 1.15;
   font-weight: 900;
-  text-shadow: 0 1px 2px #995500;
+  text-shadow: 0 1px 2px #754000;
   touch-action: manipulation;
-  padding: 0;
+  padding: 1px 0;
   white-space: nowrap;
-  letter-spacing: -.5px;
+  letter-spacing: -.4px;
+}
+
+.tile .month {
+  font-size: inherit;
+}
+
+.tile .blood {
+  font-size: inherit;
 }
 
 .tile.star {
-  font-size: clamp(12px, 3.5vw, 20px);
+  font-size: clamp(16px, 4.5vw, 23px);
   color: #fff;
   text-shadow: 0 1px 3px #995500;
 }
@@ -154,7 +175,7 @@ main {
   text-align: center;
   font-weight: 800;
   color: #fff2bd;
-  font-size: clamp(9px, 2.6vw, 12px);
+  font-size: clamp(10px, 2.8vw, 13px);
   margin: 0;
   flex: 0 0 auto;
 }
@@ -163,34 +184,34 @@ main {
   background: #14264c;
   border: 1px solid #6783bb;
   border-radius: 9px;
-  padding: 5px;
+  padding: 6px;
   margin: 0;
   flex: 0 0 auto;
 }
 
 .panel h2 {
-  font-size: 11px;
-  margin: 0 0 4px;
+  font-size: 12px;
+  margin: 0 0 5px;
   color: #ffdf72;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  gap: 5px;
 }
 
 .btn {
   border: 0;
-  border-radius: 7px;
-  padding: 6px 3px;
-  font-size: clamp(10px, 2.8vw, 13px);
+  border-radius: 8px;
+  padding: 7px 4px;
+  font-size: clamp(11px, 3vw, 14px);
   line-height: 1.1;
   font-weight: 900;
   color: #17203d;
   background: linear-gradient(#ffe58b, #e5a72b);
   touch-action: manipulation;
-  min-height: 30px;
+  min-height: 32px;
 }
 
 .btn.secondary {
@@ -203,11 +224,8 @@ main {
   color: #3b1020;
 }
 
-.status {
-  text-align: center;
-  font-size: 10px;
-  color: #cbd8f5;
-  margin-top: 3px;
+.btn:active {
+  transform: scale(.98);
 }
 
 .upload-row {
@@ -217,7 +235,7 @@ main {
 }
 
 .upload-label {
-  font-size: 10px;
+  font-size: 11px;
   color: #dbe5ff;
   flex: 1;
   margin: 0;
@@ -226,8 +244,15 @@ main {
 input[type=file] {
   width: 58%;
   min-width: 0;
-  font-size: 10px;
+  font-size: 11px;
   color: #fff;
+}
+
+.status {
+  text-align: center;
+  font-size: 11px;
+  color: #cbd8f5;
+  margin-top: 4px;
 }
 
 .note {
@@ -245,7 +270,7 @@ input[type=file] {
   }
 
   .title {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .progress {
@@ -263,6 +288,10 @@ input[type=file] {
 
   .stage {
     width: min(100%, 40svh);
+  }
+
+  .tile {
+    font-size: clamp(7px, 2.3vw, 10px);
   }
 }
 </style>
@@ -347,7 +376,7 @@ const TOTAL = 81;
 let opened = [];
 let tiles = [];
 
-// 12か月×4種類の血液型＝48種類
+// 誕生月×血液型を順番に作成
 const months = Array.from(
   { length: 12 },
   (_, i) => `${i + 1}月`
@@ -356,15 +385,18 @@ const months = Array.from(
 const bloodTypes = ['A型', 'B型', 'O型', 'AB型'];
 
 const labels = months.flatMap(month =>
-  bloodTypes.map(type => `${month}${type}`)
+  bloodTypes.map(type => ({
+    month: month,
+    blood: type,
+    isStar: false
+  }))
 );
 
+// 48種類の誕生月×血液型
 // 残り33マスは星
-for (let i = 0; i < 33; i++) {
-  labels.push('⭐');
-}
+const STAR_COUNT = 33;
 
-// ランダムに並び替え
+// Fisher-Yates方式でランダムな位置を作る
 function shuffleArray(array) {
   const result = [...array];
 
@@ -376,26 +408,70 @@ function shuffleArray(array) {
   return result;
 }
 
+// 81個の枠のうち、33個をランダムに星にする。
+// 残りの48枠には誕生月×血液型を順番に入れる。
+function createBoardItems() {
+  const positions = Array.from(
+    { length: TOTAL },
+    (_, i) => i
+  );
+
+  const starPositions = new Set(
+    shuffleArray(positions).slice(0, STAR_COUNT)
+  );
+
+  const result = [];
+  let labelIndex = 0;
+
+  for (let i = 0; i < TOTAL; i++) {
+    if (starPositions.has(i)) {
+      result.push({
+        isStar: true
+      });
+    } else {
+      result.push(labels[labelIndex]);
+      labelIndex++;
+    }
+  }
+
+  return result;
+}
+
 // 81マスを作成
 function createTiles() {
   grid.innerHTML = '';
   tiles = [];
   opened = [];
 
-  const shuffledLabels = shuffleArray(labels);
+  const items = createBoardItems();
 
-  shuffledLabels.forEach((label, i) => {
+  items.forEach((item, i) => {
     const b = document.createElement('button');
 
     b.className = 'tile';
     b.type = 'button';
-    b.textContent = label;
 
-    if (label === '⭐') {
+    if (item.isStar) {
       b.classList.add('star');
-    }
+      b.textContent = '⭐';
+      b.setAttribute('aria-label', '星のマス');
+    } else {
+      const month = document.createElement('span');
+      month.className = 'month';
+      month.textContent = item.month;
 
-    b.setAttribute('aria-label', `${label}のマスを開く`);
+      const blood = document.createElement('span');
+      blood.className = 'blood';
+      blood.textContent = item.blood;
+
+      b.appendChild(month);
+      b.appendChild(blood);
+
+      b.setAttribute(
+        'aria-label',
+        `${item.month}${item.blood}のマス`
+      );
+    }
 
     b.addEventListener('click', () => {
       openTile(i);
@@ -466,7 +542,7 @@ document.getElementById('undo').onclick = () => {
   update();
 };
 
-// 全81マスを隠して再シャッフル
+// 全81マスを隠して星の位置を再抽選
 document.getElementById('reset').onclick = () => {
   createTiles();
   status.textContent = '全81マスを隠しました！';
