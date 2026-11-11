@@ -107,7 +107,7 @@ main {
   flex: 0 1 auto;
 }
 
-/* 画像の縦横比を維持して表示 */
+/* 写真の縦横比を維持 */
 .photo {
   position: absolute;
   inset: 0;
@@ -224,6 +224,13 @@ main {
   color: #3b1020;
 }
 
+.btn.all {
+  background: linear-gradient(#fff3a5, #ffbd25);
+  color: #522b00;
+  border: 1px solid #fff0a0;
+  box-shadow: 0 0 7px #ffd65b88;
+}
+
 .btn:active {
   transform: scale(.98);
 }
@@ -327,6 +334,7 @@ input[type=file] {
     <h2>📱 配信中の操作</h2>
 
     <div class="buttons">
+
       <button class="btn" id="next" type="button">
         ⭐ 次の1マスOPEN
       </button>
@@ -342,6 +350,11 @@ input[type=file] {
       <button class="btn secondary" id="shuffle" type="button">
         🔀 ランダムOPEN
       </button>
+
+      <button class="btn all" id="openAll" type="button">
+        🌟 全81マスOPEN
+      </button>
+
     </div>
 
     <div class="status" id="status">
@@ -487,7 +500,7 @@ function update() {
   count.textContent = opened.length;
 
   if (opened.length === TOTAL) {
-    status.textContent = '全81マスOPEN！正解発表！';
+    status.textContent = '🌟 全81マスOPEN！完全達成！';
   } else {
     status.textContent =
       `${opened.length}マスOPEN・残り${TOTAL - opened.length}マス`;
@@ -540,10 +553,22 @@ document.getElementById('undo').onclick = () => {
   update();
 };
 
-// 全81マスを隠す
+// 全81マスを隠す・星を再抽選
 document.getElementById('reset').onclick = () => {
   createTiles();
   status.textContent = '全81マスを隠しました！';
+};
+
+// 全81マスOPEN
+document.getElementById('openAll').onclick = () => {
+  for (let i = 0; i < TOTAL; i++) {
+    if (!opened.includes(i)) {
+      opened.push(i);
+      tiles[i].classList.add('open');
+    }
+  }
+
+  update();
 };
 
 // 写真を選択
